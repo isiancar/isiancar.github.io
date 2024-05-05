@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function () {
     </div>
     <div class="container-fluid py-4 px-sm-3 px-md-5">
         <p class="m-0 text-center">
-            &copy; <script type='text/javascript'>var creditsyear = new Date();document.write(creditsyear.getFullYear());</script><a class="font-weight-bold" href="http://iscmedya.xyz">&nbsp;&nbsp;ISIANCAR MEDYA</a>. All Rights Reserved. 
+            &copy;2024<a class="font-weight-bold" href="http://iscmedya.xyz">&nbsp;&nbsp;ISIANCAR MEDYA</a>. All Rights Reserved. 
 			
 			<!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
 			Designed by <a class="font-weight-bold" href="https://htmlcodex.com"><font color="e5e5e5">HTML Codex</a>
