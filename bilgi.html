@@ -5,28 +5,30 @@
 <head>
     <meta charset="utf-8">
     <title>BİLGİLENDİRME | iscmedya</title>
-	<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
 	<meta content='text/html; charset=UTF-8' http-equiv='Content-Type'/>
 	<meta name="yandex-verification" content="75a7868a5a2c7913" />
 	<meta content='iscmedya' name='generator'/>
 	<meta content='#e80026' name='theme-color'/>
 	<meta content='#e80026' name='msapplication-navbutton-color'/>
+	<link rel="stylesheet" href="styles.css">
 	<link href='https://iscmedya.xyz/search?q=isiancar' rel='canonical'/>
 	<link rel="alternate" type="application/atom+xml" title="ISC MEDYA - Atom" href="https://iscmedya.xyz/feeds/posts/default" />
 	<link rel="alternate" type="application/rss+xml" title="ISC MEDYA - RSS" href="https://iscmedya.xyz/feeds/posts/default?alt=rss" />
 	<link rel="service.post" type="application/atom+xml" title="ISC MEDYA - Atom" href="https://iscmedya.xyz/posts/default" />
-	<meta content='' name='description'/>
-	<link href='https://iscmedya.xyz/images/isiancar001.jpg' rel='image_src'/>
-	<meta content='object' property='og:type'/>
-	<meta content='ISC MEDYA' property='og:title'/>
-	<meta content='https://iscmedya.xyz/search?q=isiancar' property='og:url'/>
-	<meta content='' property='og:description'/>
-	<meta content='ISC MEDYA' property='og:site_name'/>
-	<meta content='https://iscmedya.xyz/images/isiancar001.jpg' property='og:image'/>
-	<meta content='summary_large_image' name='twitter:card'/>
-	<meta content='ISC MEDYA' name='twitter:title'/>
-	<meta content='https://iscmedya.xyz/search?q=isiancar' name='twitter:domain'/>
-	<meta content='' name='twitter:description'/>
+    <meta id="descriptionMeta" name="description" content="" />
+    <link id="imageSrcLink" rel="image_src" href="https://iscmedya.xyz/images/isiancar001.jpg" />
+    <meta id="ogTypeMeta" property="og:type" content="object" />
+    <meta id="ogTitleMeta" property="og:title" content="ISC MEDYA" />
+    <meta id="ogUrlMeta" property="og:url" content="https://iscmedya.xyz/search?q=isiancar" />
+    <meta id="ogDescriptionMeta" property="og:description" content="" />
+    <meta id="ogSiteNameMeta" property="og:site_name" content="ISC MEDYA" />
+    <meta id="ogImageMeta" property="og:image" content="https://iscmedya.xyz/images/isiancar001.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="ISC MEDYA" />
+    <meta name="twitter:domain" content="https://iscmedya.xyz/search?q=isiancar" />
+    <meta name="twitter:description" content="" />
+    <script src="js/metaTags.js"></script>
 	<link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css' rel='stylesheet'/>
     <meta name = "yandex-verification" content = "43063998832b98e4" />
     <meta name='description' content='isiancar Web sitesi, isiancar fotolar, filmler, diziler, ünlüler, şehir fotoları. isiancar film ve dizileri, isiancar filmleri ve dizileri, isiancar ünlüleri'>
@@ -40,7 +42,7 @@
 <link rel="icon" href="images/isc-icon-logo.png" sizes="32x32" />
 <link rel="icon" href="images/isc-icon-logo.png" sizes="192x192" />
 <link rel="apple-touch-icon" href="images/isc-icon-logo.png" />
-<meta name="msapplication-TileImage" content="images/isc-icon-logo.png" />    
+<meta name="msapplication-TileImage" content="images/isc-icon-logo.png" />
     	<!-- Yandex.RTB R-A-7196601-1 -->
 <div id="yandex_rtb_R-A-7196601-1"></div>
 <script>
@@ -115,6 +117,8 @@ window.cookieconsent.initialise({
 <div id="topbar"></div>
 <script src="js/topbar.js"></script>
     <!-- Topbar End -->
+
+
     <!-- Navbar Start -->
     <div class="container-fluid p-0 mb-3">
         <nav class="navbar navbar-expand-lg bg-light navbar-light py-2 py-lg-0 px-lg-5">
@@ -141,7 +145,7 @@ window.cookieconsent.initialise({
         var query = document.getElementById("searchInput").value;
         if (query.trim() !== '') {
             // Arama yapılacak URL'yi oluştur
-            var searchUrl = '/' + encodeURIComponent(query) + '.html';
+            var searchUrl = '/tag/' + encodeURIComponent(query) + '.html';
 
             // Yönlendirme işlemi
             window.location.href = searchUrl;
@@ -157,6 +161,8 @@ window.cookieconsent.initialise({
         </nav>
     </div>
     <!-- Navbar End -->
+
+
     <!-- Breadcrumb Start -->
     <div class="container-fluid">
         <div class="container">
@@ -178,7 +184,7 @@ window.cookieconsent.initialise({
                 <div class="col-lg-8">
                     <!-- News Detail Start -->
                     <div class="position-relative mb-3">
-                        <img class="img-fluid w-100" src="images/iscgif001.gif" style="object-fit: cover;">
+                      <center><img src="images/isc-icon-logo.png" style="object-fit: cover;" width=40%></center>
                         <div class="overlay position-relative bg-light">
                             <div class="mb-3">
                                 <a href="">Organizasyon</a>
@@ -195,33 +201,65 @@ window.cookieconsent.initialise({
                                 <p>Bize ulaşan tüm talep, şikayet ve görüşler büyük bir titizle incelenir ve yapılan şikayetin doğru olduğu kanaatine varılırsa, hak ihlali olduğu belirlenen içerikler, ivedi şekilde sitemizden kaldırılır.</p>
                                 <p>Dikkat! 5651 sayılı kanun; özel hayatın gizliliği açısından çeşitli düzenlemeler getirmiştir. İnternet üzerinde herhangi bir içerik sebebiyle, haklarının ihlal edildiğini düşünen kişiler, içeriğin yayından kaldırılmasını talep edebiliyor. Kişilik haklarının ihlali durumu söz konusu olduğunda, ilgili kişiler yer sağlayıcısına başvuru yaparak hak ihlali bildirimi yapıyor.</p>
                                 <p>NOT: Tüm İçerikler Tanıtım Amaçlıdır, Lütfen Yasal Satın Almanız Önerilir.</p>
-                                <p>Telif Hakkı veya DMCA mail to iletişim: <a href="mailto:isiancar@outlook.com">isiancar@outlook.com</p>
+                                <p>Telif Hakkı veya DMCA mail to iletişim: <a href="mailto:isiancar@outlook.com">isiancar@outlook.com</a></p>
                             </div>
                         </div>
                     </div>
                     <!-- News Detail End -->
+
+
+
                     <!-- Comment Form Start -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Sunucudan yorumları almak için bir HTTP GET isteği gönderin
+            fetch('/comments')
+            .then(response => response.json())
+            .then(data => {
+                // Alınan yorum verilerini kullanarak HTML oluşturun
+                var yorumlarHTML = '';
+                data.forEach(yorum => {
+                    yorumlarHTML += `
+                        <div>
+                            <p><strong>${yorum.name}</strong> (${yorum.email}) - ${yorum.website}</p>
+                            <p>${yorum.message}</p>
+                        </div>
+                    `;
+                });
+
+                // Oluşturulan HTML'i yorumlar alanına ekleyin
+                document.getElementById('yorumlar').innerHTML = yorumlarHTML;
+            })
+            .catch(error => console.error('Hata:', error));
+        });
+    </script>
 <div id="comment"></div>
 <script src="js/comment.js"></script>
                     <!-- Comment Form End -->
                 </div>
+
                 <div class="col-lg-4 pt-3 pt-lg-0">
+
                     <!-- Social Follow Start -->
 <div id="social"></div>
 <script src="js/social.js"></script>
                     <!-- Social Follow End -->
+
                     <!-- Newsletter Start -->
 <div id="newsletter"></div>
 <script src="js/newsletter.js"></script>
                     <!-- Newsletter End -->
+
                     <!-- Ads Start -->
 <div id="ads"></div>
 <script src="js/ads.js"></script>
                     <!-- Ads End -->
+
                     <!-- Popular News Start -->
 <div id="populernews"></div>
 <script src="js/populernews.js"></script>
                     <!-- Popular News End -->
+
                     <!-- Tags Start -->
 <div id="tags"></div>
 <script src="js/tags.js"></script>
@@ -232,6 +270,8 @@ window.cookieconsent.initialise({
     </div>
     </div>
     <!-- News With Sidebar End -->
+
+
     <!-- Footer Start -->
 <div id="footer"></div>
 <script src="js/footer.js"></script>
@@ -254,6 +294,7 @@ window.cookieconsent.initialise({
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+    <script src="js/metaTags.js"></script>
 </body>
 
 </html>
