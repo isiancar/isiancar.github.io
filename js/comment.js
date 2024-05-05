@@ -50,6 +50,8 @@ document.addEventListener("DOMContentLoaded", function () {
             console.log(data); // Sunucudan gelen yanıtı konsola yazdırır
             // İsteğin başarılı olduğunu kullanıcıya bildirir
             alert('Yorum başarıyla eklendi');
+            // Yorumları yeniden yükle
+            loadComments();
         })
         .catch(error => {
             console.error('Hata:', error); // Hata durumunda konsola hata mesajını yazdırır
@@ -60,5 +62,28 @@ document.addEventListener("DOMContentLoaded", function () {
         // Formu temizler
         commentForm.reset();
     });
-});
 
+    // Yorumları yükleme fonksiyonu
+    function loadComments() {
+        fetch('/comments')
+        .then(response => response.json())
+        .then(comments => {
+            // Yorumları sayfaya ekleyin
+            var commentList = document.getElementById('commentList');
+            commentList.innerHTML = ''; // Önceki yorumları temizle
+            comments.forEach(comment => {
+                var commentItem = document.createElement('div');
+                commentItem.classList.add('comment');
+                commentItem.innerHTML = `
+                    <p><strong>${comment.name}</strong></p>
+                    <p>${comment.message}</p>
+                `;
+                commentList.appendChild(commentItem);
+            });
+        })
+        .catch(error => console.error('Yorumlar yüklenirken hata oluştu:', error));
+    }
+
+    // Sayfa yüklendiğinde yorumları otomatik olarak yükle
+    loadComments();
+});
