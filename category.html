@@ -112,37 +112,8 @@ window.cookieconsent.initialise({
 
 <body>
     <!-- Topbar Start -->
-    <div class="container-fluid">
-        <div class="row align-items-center bg-light px-lg-5">
-            <div class="col-12 col-md-8">
-                <div class="d-flex justify-content-between">
-                    <div class="bg-primary text-white text-center py-2" style="width: 100px;">Güncel</div>
-                    <div class="owl-carousel owl-carousel-1 tranding-carousel position-relative d-inline-flex align-items-center ml-3" style="width: calc(100% - 100px); padding-left: 90px;">
-                        <div class="text-truncate"><a class="text-secondary" href="">ISIANCAR Medya sitemize hoşgeldiniz</a></div>
-                        <div class="text-truncate"><a class="text-secondary" href="">isiancar organizasyonlarında sizde yerini almak istermisiniz. Haydi mail gönderin..</a></div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 text-right d-none d-md-block">
-                    <a class="btn btn-outline-secondary text-center mr-2 px-0" style="width: 38px; height: 38px;" href="https://twitter.com/isiancar" target="blank"><i class="fab fa-twitter"></i></a>
-                    <a class="btn btn-outline-secondary text-center mr-2 px-0" style="width: 38px; height: 38px;" href="https://facebook.com/isiancar" target="blank"><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-outline-secondary text-center mr-2 px-0" style="width: 38px; height: 38px;" href="https://linkedin.com/in/isiancar" target="blank"><i class="fab fa-linkedin-in"></i></a>
-                    <a class="btn btn-outline-secondary text-center mr-2 px-0" style="width: 38px; height: 38px;" href="https://instagram.com/isiancar" target="blank"><i class="fab fa-instagram"></i></a>
-                    <a class="btn btn-outline-secondary text-center mr-2 px-0" style="width: 38px; height: 38px;" href="https://youtube.com/@isiancar" target="blank"><i class="fab fa-youtube"></i></a>
-
-            </div>
-        </div>
-        <div class="row align-items-center py-2 px-lg-5">
-            <div class="col-lg-4">
-                <a href="" class="navbar-brand d-none d-lg-block">
-                    <img class="img-fluid" src="images/logo.png" alt="iscmedya.xyz" width="200px" height="60px">
-                </a>
-            </div>
-            <div class="col-lg-8 text-center text-lg-right">
-                <img class="img-fluid" src="img/ads-700x70.gif" alt="">
-            </div>
-        </div>
-    </div>
+<div id="topbar"></div>
+<script src="js/topbar.js"></script>
     <!-- Topbar End -->
 
 
@@ -155,22 +126,33 @@ window.cookieconsent.initialise({
             <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse justify-content-between px-0 px-lg-3" id="navbarCollapse">
-                <div class="navbar-nav mr-auto py-0">
-                    <a href="index.html" class="nav-item nav-link active">Anasayfa</a>
-                    <a href="category.html" class="nav-item nav-link">Kategoriler</a>
-                    <a href="muzik.html" class="nav-item nav-link">Müzik</a>
-                    <a href="foto.html" class="nav-item nav-link">Foto</a>
-                    <a href="video.html" class="nav-item nav-link">Video</a>
-                    <a href="reklam.html" class="nav-item nav-link">Reklam</a>
-                    <a href="menajerlik.html" class="nav-item nav-link">Menajerlik</a>
-                    <a href="contact.html" class="nav-item nav-link">İletişim</a>
-                </div>
-                <div class="input-group ml-auto" style="width: 100%; max-width: 300px;">
-                    <input type="text" class="form-control" placeholder="Keyword">
-                    <div class="input-group-append">
-                        <button class="input-group-text text-secondary"><i
-                                class="fa fa-search"></i></button>
+    <!-- Ana Menu Start -->
+<div id="menuContainer"></div>
+<script src="js/menu.js"></script>
+    <!-- Ana Menu Bitiş -->
+    <!-- Arama blogu -->
+<div class="input-group ml-auto" style="width: 100%; max-width: 300px;">
+<div class="input-group">
+    <input type="text" id="searchInput" class="form-control" placeholder="Keyword" onkeydown="if(event.keyCode==13) search()">
+    <div class="input-group-append">
+        <button class="input-group-text text-secondary" onclick="search()"><i class="fa fa-search"></i></button>
+    </div>
+</div>
+<script>
+    function search() {
+        var query = document.getElementById("searchInput").value;
+        if (query.trim() !== '') {
+            // Arama yapılacak URL'yi oluştur
+            var searchUrl = '/' + encodeURIComponent(query) + '.html';
+
+            // Yönlendirme işlemi
+            window.location.href = searchUrl;
+        } else {
+            alert('Lütfen bir arama terimi girin!');
+        }
+    }
+</script>
+    <!-- Arama blogu bitiş -->
                     </div>
                 </div>
             </div>
@@ -424,177 +406,31 @@ window.cookieconsent.initialise({
                     <!-- News Detail End -->
 
 
-
                     <!-- Comment Form Start -->
-                    <div class="bg-light mb-3" style="padding: 30px;">
-                        <h3 class="mb-4">Leave a comment</h3>
-                        <form>
-                            <div class="form-group">
-                                <label for="name">İsim *</label>
-                                <input type="text" class="form-control" id="name">
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Email *</label>
-                                <input type="email" class="form-control" id="email">
-                            </div>
-                            <div class="form-group">
-                                <label for="website">Website</label>
-                                <input type="url" class="form-control" id="website">
-                            </div>
-
-                            <div class="form-group">
-                                <label for="message">Mesajınız *</label>
-                                <textarea id="message" cols="30" rows="5" class="form-control"></textarea>
-                            </div>
-                            <div class="form-group mb-0">
-                                <input type="submit" value="Gönder"
-                                    class="btn btn-primary font-weight-semi-bold py-2 px-3">
-                            </div>
-                        </form>
-                    </div>
+<div id="comment"></div>
+<script src="js/comment.js"></script>
                     <!-- Comment Form End -->
                 </div>
-
                 <div class="col-lg-4 pt-3 pt-lg-0">
                     <!-- Social Follow Start -->
-                    <div class="pb-3">
-                        <div class="bg-light py-2 px-4 mb-3">
-                            <h3 class="m-0">Sosyal Medya</h3>
-                        </div>
-                        <div class="d-flex mb-3">
-                            <a href="https://facebook.com/isiancar" target="blank" class="d-block w-50 py-2 px-3 text-white text-decoration-none mr-2" style="background: #39569E;">
-                                <small class="fab fa-facebook-f mr-2"></small><small>7845 Beğeni</small>
-                            </a>
-                            <a href="https://twitter.com/isiancar" target="blank"  class="d-block w-50 py-2 px-3 text-white text-decoration-none ml-2" style="background: #52AAF4;">
-                                <small class="fab fa-twitter mr-2"></small><small>4225 Takipçi</small>
-                            </a>
-                        </div>
-                        <div class="d-flex mb-3">
-                            <a href="https://linkedin.com/in/isiancar" target="blank"  class="d-block w-50 py-2 px-3 text-white text-decoration-none mr-2" style="background: #0185AE;">
-                                <small class="fab fa-linkedin-in mr-2"></small><small>7100 Bağlantılı</small>
-                            </a>
-                            <a href="https://instagram.com/isiancar" target="blank"  class="d-block w-50 py-2 px-3 text-white text-decoration-none ml-2" style="background: #C8359D;">
-                                <small class="fab fa-instagram mr-2"></small><small>11020 Takipçi</small>
-                            </a>
-                        </div>
-                        <div class="d-flex mb-3">
-                            <a href="https://youtube.com/@isiancar" target="blank"  class="d-block w-50 py-2 px-3 text-white text-decoration-none mr-2" style="background: #DC472E;">
-                                <small class="fab fa-youtube mr-2"></small><small>10500 İzlenme</small>
-                            </a>
-                            <a href="" class="d-block w-50 py-2 px-3 text-white text-decoration-none ml-2" style="background: #1AB7EA;">
-                                <small class="fab fa-vimeo-v mr-2"></small><small>12,345 Takipçi</small>
-                            </a>
-                        </div>
-                    </div>
+<div id="social"></div>
+<script src="js/social.js"></script>
                     <!-- Social Follow End -->
-
                     <!-- Newsletter Start -->
-                    <div class="pb-3">
-                        <div class="bg-light py-2 px-4 mb-3">
-                            <h3 class="m-0">Haber Aboneliği</h3>
-                        </div>
-                        <div class="bg-light text-center p-4 mb-3">
-                            <p>Güncel haberlerimize ücretsiz abone olmak istermisin.</p>
-                            <div class="input-group" style="width: 100%;">
-                                <input type="text" class="form-control form-control-lg" placeholder="Your Email">
-                                <div class="input-group-append">
-                                    <button class="btn btn-primary">Gönder</button>
-                                </div>
-                            </div>
-                            <small>Mail adresinizi yazıp Gönder butonuna basınız</small>
-                        </div>
-                    </div>
+<div id="newsletter"></div>
+<script src="js/newsletter.js"></script>
                     <!-- Newsletter End -->
-
                     <!-- Ads Start -->
-                    <div class="mb-3 pb-3">
-                        <a href=""><img class="img-fluid" src="img/news-500x280-4.jpg" alt=""></a>
-                    </div>
+<div id="ads"></div>
+<script src="js/ads.js"></script>
                     <!-- Ads End -->
-
                     <!-- Popular News Start -->
-                    <div class="pb-3">
-                        <div class="bg-light py-2 px-4 mb-3">
-                            <h3 class="m-0">Popüler yazılar</h3>
-                        </div>
-                        <div class="d-flex mb-3">
-                            <img src="images/isiancar001.jpg" style="width: 100px; height: 100px; object-fit: cover;">
-                            <div class="w-100 d-flex flex-column justify-content-center bg-light px-3" style="height: 100px;">
-                                <div class="mb-1" style="font-size: 13px;">
-                                    <a href="muzik.html">Müzik</a>
-                                    <span class="px-1">/</span>
-                                    <span>isiancar</span>
-                                </div>
-                                <a class="h6 m-0" href="muzik.html">Konser Organizasyonlarında tercih edilen isiancar</a>
-                            </div>
-                        </div>
-                        <div class="d-flex mb-3">
-                            <img src="images/isiancar002.jpg" style="width: 100px; height: 100px; object-fit: cover;">
-                            <div class="w-100 d-flex flex-column justify-content-center bg-light px-3" style="height: 100px;">
-                                <div class="mb-1" style="font-size: 13px;">
-                                    <a href="foto.html">Foto</a>
-                                    <span class="px-1">/</span>
-                                    <span>isiancar</span>
-                                </div>
-                                <a class="h6 m-0" href="category.html">Reklam sponsoru olduğumuz yerler</a>
-                            </div>
-                        </div>
-                        <div class="d-flex mb-3">
-                            <img src="images/isiancar020.jpg" style="width: 100px; height: 100px; object-fit: cover;">
-                            <div class="w-100 d-flex flex-column justify-content-center bg-light px-3" style="height: 100px;">
-                                <div class="mb-1" style="font-size: 13px;">
-                                    <a href="foto.html">Foto</a>
-                                    <span class="px-1">/</span>
-                                    <span>isiancar</span>
-                                </div>
-                                <a class="h6 m-0" href="category.html">ISIANCAR çok sevilen ve popüler oldu</a>
-                            </div>
-                        </div>
-                        <div class="d-flex mb-3">
-                            <img src="images/isiancar018.jpg" style="width: 100px; height: 100px; object-fit: cover;">
-                            <div class="w-100 d-flex flex-column justify-content-center bg-light px-3" style="height: 100px;">
-                                <div class="mb-1" style="font-size: 13px;">
-                                    <a href="foto.html">Foto</a>
-                                    <span class="px-1">/</span>
-                                    <span>isiancar</span>
-                                </div>
-                                <a class="h6 m-0" href="category.html">Tercih edilenler arasında isiancar</a>
-                            </div>
-                        </div>
-                        <div class="d-flex mb-3">
-                            <img src="images/isiancar022.jpg" style="width: 100px; height: 100px; object-fit: cover;">
-                            <div class="w-100 d-flex flex-column justify-content-center bg-light px-3" style="height: 100px;">
-                                <div class="mb-1" style="font-size: 13px;">
-                                    <a href="muzik.html/">Organizasyon</a>
-                                    <span class="px-1">/</span>
-                                    <span>isiancar</span>
-                                </div>
-                                <a class="h6 m-0" href="category.html">Gece organizasyonlarında popülerlik</a>
-                            </div>
-                        </div>
-                    </div>
+<div id="populernews"></div>
+<script src="js/populernews.js"></script>
                     <!-- Popular News End -->
-
                     <!-- Tags Start -->
-                    <div class="pb-3">
-                        <div class="bg-light py-2 px-4 mb-3">
-                            <h3 class="m-0">Etiketler</h3>
-                        </div>
-                        <div class="d-flex flex-wrap m-n1">
-                            <a href="isiancar.html" class="btn btn-sm btn-outline-secondary m-1">isiancar</a>
-                            <a href="muzik.html" class="btn btn-sm btn-outline-secondary m-1">müzik</a>
-                            <a href="foto.html" class="btn btn-sm btn-outline-secondary m-1">foto</a>
-                            <a href="video.html" class="btn btn-sm btn-outline-secondary m-1">video</a>
-                            <a href="muzik.html" class="btn btn-sm btn-outline-secondary m-1">Konserler</a>
-                            <a href="video.html" class="btn btn-sm btn-outline-secondary m-1">Sinema</a>
-                            <a href="muzik.html" class="btn btn-sm btn-outline-secondary m-1">Tanıtımlar</a>
-                            <a href="category.html" class="btn btn-sm btn-outline-secondary m-1">Rehberlik</a>
-                            <a href="category.html" class="btn btn-sm btn-outline-secondary m-1">Menajerlik</a>
-                            <a href="category.html" class="btn btn-sm btn-outline-secondary m-1">Blog</a>
-                            <a href="category.html" class="btn btn-sm btn-outline-secondary m-1">Web</a>
-                            <a href="category.html" class="btn btn-sm btn-outline-secondary m-1">Reklam</a>
-                        </div>
-                    </div>
+<div id="tags"></div>
+<script src="js/tags.js"></script>
                     <!-- Tags End -->
                 </div>
             </div>
@@ -602,78 +438,9 @@ window.cookieconsent.initialise({
     </div>
     </div>
     <!-- News With Sidebar End -->
-
-
-   <!-- Footer Start -->
-    <div class="container-fluid bg-light pt-5 px-sm-3 px-md-5">
-        <div class="row">
-            <div class="col-lg-3 col-md-6 mb-5">
-                <a href="index.html" class="navbar-brand">
-                    <img class="img-fluid" src="images/logo.png" alt="ISIANCAR" width="200px" height="60px">
-                </a>
-                <p>Sitemiz hakkında bilgi almak yada paylaşmak istediğniz kayıtlar varsa için <a href="bilgi.html">bilgi</a> sayfamıza tıklayın.</p>
-                <div class="d-flex justify-content-start mt-4">
-                    <a class="btn btn-outline-secondary text-center mr-2 px-0" style="width: 38px; height: 38px;" href="https://twitter.com/isiancar" target="blank"><i class="fab fa-twitter"></i></a>
-                    <a class="btn btn-outline-secondary text-center mr-2 px-0" style="width: 38px; height: 38px;" href="https://facebook.com/isiancar" target="blank"><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-outline-secondary text-center mr-2 px-0" style="width: 38px; height: 38px;" href="https://linkedin.com/in/isiancar" target="blank"><i class="fab fa-linkedin-in"></i></a>
-                    <a class="btn btn-outline-secondary text-center mr-2 px-0" style="width: 38px; height: 38px;" href="https://instagram.com/isiancar" target="blank"><i class="fab fa-instagram"></i></a>
-                    <a class="btn btn-outline-secondary text-center mr-2 px-0" style="width: 38px; height: 38px;" href="https://youtube.com/@isiancar" target="blank"><i class="fab fa-youtube"></i></a>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 mb-5">
-                <h4 class="font-weight-bold mb-4">Kategoriler</h4>
-                <div class="d-flex flex-wrap m-n1">
-                    <a href="muzik.html" class="btn btn-sm btn-outline-secondary m-1">Müzik</a>
-                    <a href="category.html" class="btn btn-sm btn-outline-secondary m-1">Reklamcılık</a>
-                    <a href="category.html" class="btn btn-sm btn-outline-secondary m-1">Rehberlik</a>
-                    <a href="category.html" class="btn btn-sm btn-outline-secondary m-1">Menajerlik</a>
-                    <a href="category.html" class="btn btn-sm btn-outline-secondary m-1">Organizasyon</a>
-                    <a href="video.html" class="btn btn-sm btn-outline-secondary m-1">Filmler</a>
-                    <a href="foto.html" class="btn btn-sm btn-outline-secondary m-1">Fotolar</a>
-                    <a href="video.html" class="btn btn-sm btn-outline-secondary m-1">Videolar</a>
-                    <a href="category.html" class="btn btn-sm btn-outline-secondary m-1">Paylaşımlar</a>
-                    <a href="category.html" class="btn btn-sm btn-outline-secondary m-1">Web Siteler</a>
-                    <a href="bilgi.html" class="btn btn-sm btn-outline-secondary m-1">Bilgi</a>
-                    <a href="contact.html" class="btn btn-sm btn-outline-secondary m-1">İletişim</a>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 mb-5">
-                <h4 class="font-weight-bold mb-4">Etiketler</h4>
-                <div class="d-flex flex-wrap m-n1">
-                    <a href="muzik.html" class="btn btn-sm btn-outline-secondary m-1">Müzik</a>
-                    <a href="category.html" class="btn btn-sm btn-outline-secondary m-1">Reklamcılık</a>
-                    <a href="category.html" class="btn btn-sm btn-outline-secondary m-1">Rehberlik</a>
-                    <a href="category.html" class="btn btn-sm btn-outline-secondary m-1">Menajerlik</a>
-                    <a href="category.html" class="btn btn-sm btn-outline-secondary m-1">Organizasyon</a>
-                    <a href="video.html" class="btn btn-sm btn-outline-secondary m-1">Filmler</a>
-                    <a href="foto.html" class="btn btn-sm btn-outline-secondary m-1">Fotolar</a>
-                    <a href="video.html" class="btn btn-sm btn-outline-secondary m-1">Videolar</a>
-                    <a href="category.html" class="btn btn-sm btn-outline-secondary m-1">Paylaşımlar</a>
-                    <a href="category.html" class="btn btn-sm btn-outline-secondary m-1">Web Siteler</a>
-                    <a href="bilgi.html" class="btn btn-sm btn-outline-secondary m-1">Bilgi</a>
-                    <a href="contact.html" class="btn btn-sm btn-outline-secondary m-1">İletişim</a>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 mb-5">
-                <h4 class="font-weight-bold mb-4">Linkler</h4>
-                <div class="d-flex flex-column justify-content-start">
-                    <a class="text-secondary mb-2" href="bilgi.html"><i class="fa fa-angle-right text-dark mr-2"></i>Bilgi</a>
-                    <a class="text-secondary mb-2" href="category.html"><i class="fa fa-angle-right text-dark mr-2"></i>Reklam</a>
-                    <a class="text-secondary mb-2" href="gizlilik_bildirimi.html"><i class="fa fa-angle-right text-dark mr-2"></i>Gizlilik Bildirimi</a>
-                    <a class="text-secondary mb-2" href="category.html"><i class="fa fa-angle-right text-dark mr-2"></i>Web Siteler</a>
-                    <a class="text-secondary" href="contact.html"><i class="fa fa-angle-right text-dark mr-2"></i>İletişim</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="container-fluid py-4 px-sm-3 px-md-5">
-        <p class="m-0 text-center">
-            &copy; <script type='text/javascript'>var creditsyear = new Date();document.write(creditsyear.getFullYear());</script><a class="font-weight-bold" href="http://iscmedya.xyz">&nbsp;&nbsp;ISIANCAR MEDYA</a>. All Rights Reserved. 
-			
-			<!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-			Designed by <a class="font-weight-bold" href="https://htmlcodex.com"><font color="e5e5e5">HTML Codex</a>
-        </p>
-    </div>
+    <!-- Footer Start -->
+<div id="footer"></div>
+<script src="js/footer.js"></script>
     <!-- Footer End -->
 
 
