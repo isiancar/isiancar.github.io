@@ -145,7 +145,7 @@ window.cookieconsent.initialise({
         var query = document.getElementById("searchInput").value;
         if (query.trim() !== '') {
             // Arama yapılacak URL'yi oluştur
-            var searchUrl = '/tag/' + encodeURIComponent(query) + '.html';
+            var searchUrl = '/' + encodeURIComponent(query) + '.html';
 
             // Yönlendirme işlemi
             window.location.href = searchUrl;
